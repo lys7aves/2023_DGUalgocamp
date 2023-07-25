@@ -29,8 +29,11 @@ public class main {
                 int x = stack.peek();
                 System.out.println(x);
             }else if(str.equals("pop")) {
-                int x = stack.pop();
-                System.out.println(x);
+				if(stack.empty()) System.out.println(-1);
+				else{
+	                int x = stack.pop();
+    	            System.out.println(x);
+				}
             }else {
                 break;
             }

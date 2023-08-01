@@ -1,0 +1,21 @@
+N, C = map(int, input().split());
+x = list(map(int, input().split()));
+
+x.sort()
+
+l = 0
+r = 1000000000
+while l < r:
+	m = (l+r+1) // 2
+	
+	cnt=1
+	prev_x = x[0]
+	for curr_x in x:
+		if curr_x - prev_x >= m:
+			prev_x = curr_x
+			cnt += 1
+			
+	if cnt >= C: l = m
+	else: r = m-1
+
+print(l)
